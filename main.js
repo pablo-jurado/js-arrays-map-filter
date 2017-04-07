@@ -7,14 +7,14 @@ var priceTotal = arrItems.reduce(function (acc, item) {
 }, 0)
 
 var averagePrice = priceTotal / arrItems.length
-console.log('The average price is ' + averagePrice)
+console.log('-----------> The average price is ' + averagePrice)
 
 // array of items that cost between $14.00 and $18.00 USD
 var arrItems14and18 = arrItems.filter(function (item) {
   return (item.price >= 14 && item.price <= 18)
 })
 
-console.log('Items that cost between $14.00 USD and $18.00 USD:')
+console.log('-----------> Items that cost between $14.00 USD and $18.00 USD:')
 arrItems14and18.forEach(function (item) {
   console.log(item.title, item.price)
 })
@@ -23,13 +23,24 @@ arrItems14and18.forEach(function (item) {
 var ItemCurrencyGBP = arrItems.filter(function (item) {
   return item.currency_code === 'GBP'
 })
-console.log('Item Currency GBP', ItemCurrencyGBP)
+console.log('-----------> Item Currency GBP', ItemCurrencyGBP)
 
 // items are made of wood.
 var itemsMadeOfWood = arrItems.filter(function (item) {
   return item.materials.includes('wood')
 })
-console.log('Items made of wood')
+console.log('-----------> Items made of wood')
 itemsMadeOfWood.forEach(function (item) {
   console.log(item.title, item.materials)
 })
+
+// items are made of eight or more materials.
+var itemsEightOrMore = arrItems.filter(function (item) {
+  return item.materials.length >= 8
+})
+console.log('-----------> Items made of eight or more materials.')
+itemsEightOrMore.forEach(function (item) {
+  console.log(item.title, '| materials number ' + item.materials.length)
+})
+
+// items were made by their sellers
