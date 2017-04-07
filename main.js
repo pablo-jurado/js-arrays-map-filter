@@ -44,3 +44,9 @@ itemsEightOrMore.forEach(function (item) {
 })
 
 // items were made by their sellers
+var madeBySeller = arrItems.filter(function (item) {
+  return item.who_made === 'i_did'
+})
+madeBySeller.forEach(function (item) {
+  console.log('item made by seller', item.who_made)
+})
